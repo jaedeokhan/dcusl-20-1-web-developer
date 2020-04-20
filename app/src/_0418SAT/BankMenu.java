@@ -28,20 +28,20 @@ public class BankMenu {
 				deposit = scan.nextInt();
 				balance += deposit;
 				System.out.println("현재 입금 금액은  : " + deposit);
-				System.out.println("현재 잔고는  :" + balance);
+//				System.out.println("현재 잔고는  :" + balance);
 			}
 			else if (choice == 2) {
 				System.out.print("2. 출금할 금액을 입력 : ");
 				expenditure = scan.nextInt();
 				balance -= expenditure;
 				System.out.println("현재 출금 금액 : " + expenditure);
-				System.out.println("현재 잔고는  :" + balance);
+//				System.out.println("현재 잔고는  :" + balance);
 			}
 			else {
 				System.out.println("4. 종료입니다.");
 				break;
 			}
-			
+			System.out.println("현재 잔고는 : "+balance);
 			
 			
 		}while(run);
