@@ -4,7 +4,7 @@ public class ArrayEx3 {
 
 	public static void main(String[] args) {
 		/*
-		 다차원 배열
+		 다차원 배열 == 3 * 4
 		 */
 		int i_size = 3;
 		int j_size = 4;
@@ -15,7 +15,7 @@ public class ArrayEx3 {
 			for (int j = 0; j < arr[i].length; j++) {
 				arr[i][j] = su++;
 				System.out.print("arr" + "[" + i + "]" + "[" + j +
-						"]" + "=" + arr[i][j] +"\t");
+						"]" + "=" + arr[i][j] +" ");
 			}
 			System.out.println();
 		}
