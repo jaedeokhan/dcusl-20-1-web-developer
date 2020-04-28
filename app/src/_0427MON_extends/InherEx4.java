@@ -81,10 +81,11 @@ class A extends B{
 	int num = 100;
 	
 	public void method() {
-//		System.out.println("method " + num);
+		System.out.println("method " + num);
 	}
 	public void method_A() {
-		System.out.println("method_A " + msg);
+		System.out.println("method_A " + msg + super.num);
+		
 	}
 }
 
