@@ -11,11 +11,11 @@ public class Triangle extends Shape{
 	@Override
 	public double getArea() {
 		
-		System.out.println("**** 사각형 넓이 ****");
-		System.out.print("밑변  : ");
-		nData1 = scan.nextInt();
-		System.out.print("높 이 : ");
-		nData2 = scan.nextInt();
+//		System.out.println("**** 사각형 넓이 ****");
+//		System.out.print("밑변  : ");
+//		nData1 = scan.nextInt();
+//		System.out.print("높 이 : ");
+//		nData2 = scan.nextInt();
 		return (nData1 * nData2) / 2.0;
 	}
 	

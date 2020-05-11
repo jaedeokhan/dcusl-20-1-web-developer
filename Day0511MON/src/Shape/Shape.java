@@ -2,7 +2,7 @@ package Shape;
 
 public abstract class Shape {
 	// 생성자 생성 단축키 => Shift + Alt + s
-	int nData1, nData2, nData3;
+	int nData1, nData2;
 
 	public Shape(int nData1, int nData2) {
 		super();
