@@ -89,7 +89,7 @@ class Trapezoid extends Shape{
 	}
 	public double getArea() {
 		int dimension = 0;
-		System.out.println("**** 삼각형 넓이 ****");
+		System.out.println("**** 사다리꼴 넓이 ****");
 		System.out.print("아랫변  : ");
 		nData1 = scan.nextInt();
 		System.out.print("밑변 : ");
