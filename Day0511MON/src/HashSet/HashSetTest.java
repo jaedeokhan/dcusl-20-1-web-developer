@@ -1,8 +1,9 @@
+package HashSet;
 // 배열은 기본 타입의 데이터나 객체 타입의 데이터 모두 저장할 수 있었지만
 // 컬렉션은 객체 타입만 저장할 수 있다.
 // 배열은 크기가 한 번 정해지면 변경할 수 없지만,
 // 컬렉션은 크기보다 더 많은 데이터를 저장하면 크기가 자동으로 늘어난다.
-package Object;
+
 
 import java.util.HashSet;
 import static java.lang.System.out;
@@ -30,7 +31,7 @@ public class HashSetTest {
 		out.println("hs2 : " + hs2);
 		
 		out.println("");
-		out.println("삭제");
+		out.println("제네시스 삭제");
 		hs1.remove("제네시스");
 		out.println("hs1 : " + hs1);
 		
