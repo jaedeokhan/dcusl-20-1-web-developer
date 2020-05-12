@@ -1,5 +1,12 @@
 ### 2020 0512 TUE 
 ### MMS 실습 -> 회원관리
+1. vo/MemberVO.class
+2. ui/MemberUI.class
+3. controller/Controller.class
+4. action/Action.interface
+   * MemberRegistAction.class : action interface를 implements해서 action 참조 변수로 접근을 사용가능.
+5. svc
+6. dao : 데이터베이스 관련
 
 #### 1. 정보 시스템을 만들려면 데이터 설계부터 먼저 들어가야한다.
 우리가 다룰 회원정보를 먼저 설계해야한다.
