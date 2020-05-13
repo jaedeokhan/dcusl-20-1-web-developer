@@ -1,15 +1,26 @@
 package ui;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import action.Action;
+import action.MemberListAction;
+import action.MemberModifyAction;
 import action.MemberRegistAction;
+import action.MemberViewAction;
 import controller.MemberController;
+import vo.MemberVO;
 
-public class MemvberUI {
+public class MemberUI {
 	
+	// public static으로  ArrayList
+	public static ArrayList<MemberVO> memberList = new ArrayList<MemberVO>(); 
 	public static void main(String[] args) {
+	
 		Scanner scan = new Scanner(System.in);
+		
+		scan.useDelimiter(System.getProperty("line.separator"));
+		
 		
 		// Controller 생성
 		// Controller : 요청을 받는 클래스 MVC 패턴의 C 부분
@@ -44,10 +55,13 @@ public class MemvberUI {
 				action = new MemberRegistAction(); //패키지명.기능이름.패턴이름
 				break;
 			case 2:
+				action = new MemberListAction();
 				break;
 			case 3:
+				action = new MemberViewAction();
 				break;
 			case 4:
+				action = new MemberModifyAction();
 				break;
 			case 5:
 				break;
