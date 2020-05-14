@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import vo.MemberVO;
+import vo.SerachData;
 
 public class ConsoleUtil {
 
@@ -152,6 +153,65 @@ public class ConsoleUtil {
 
 	}
 
+	public void printRemoveSuccesMessage(String removeMemberId) {
+		System.out.println(removeMemberId + " 님의 정보삭제 성공");
+		
+	}
 
-	
+	public void printRemoveFailMessage(String removeMemberId) {
+		System.out.println(removeMemberId + " 님의 정보삭제 실패");
+	}
+
+	public SerachData getSearchData(Scanner scan) {
+		
+		// SearchData가 들어있는 클래스!
+		SerachData searchData = new SerachData();
+		
+		// 검색 조건을 먼저 입력 받아라.
+		System.out.print("검색 조건을 입력(아이디 | 이름 ) : ");
+		String searchCondition = scan.next();
+		
+		// if/else 블록 둘 다 공통적으로 사용할 수 있는 변수 만들기
+		String searchValue = null;
+		if (searchCondition.equals("아이디")) {
+			System.out.println("검색할 아이디  :");
+			searchValue = scan.next();
+		}
+		else {
+			System.out.println("검색할 이름 : ");
+			searchValue = scan.next();
+		}
+		
+		searchData.setSearchCondition(searchCondition);
+		searchData.setSearchValue(searchValue);
+		
+		return searchData;
+	}
+
+	public void printSearchMemberVO(MemberVO memberVO) {
+		
+		System.out.println(memberVO);
+		
+	}
+
+	public void printSearchMemberList(ArrayList<MemberVO> memberList) {
+		// 한 개도 없다면, 즉 요소가 없다.
+		if (memberList.size() == 0) {
+			System.out.println("검색한 회원 정보가 존재하지 않습니다.");
+		}
+		else {
+			System.out.println("검색결과 : " );
+			// collection 의 요소의 개수 반환 ==> size() 
+			for (int i = 0; i < memberList.size(); i++) {
+				System.out.println(memberList.get(i));
+			}
+		}
+		
+	}
+
+
+
+
+
+
 }

@@ -7,6 +7,8 @@ import action.Action;
 import action.MemberListAction;
 import action.MemberModifyAction;
 import action.MemberRegistAction;
+import action.MemberRemoveAction;
+import action.MemberSearchAction;
 import action.MemberViewAction;
 import controller.MemberController;
 import vo.MemberVO;
@@ -64,8 +66,18 @@ public class MemberUI {
 				action = new MemberModifyAction();
 				break;
 			case 5:
+				action = new MemberRemoveAction();
 				break;
 			case 6:
+				// 사용자로부터 입력을 받아서 검색 조건과 검색 값을 얻어와야한다.
+				// 조건 1 : id로 검색, name으로 검색 
+				// id로 검색을 할때는 회원이 한 명이다.
+				// 그렇지만, 이름일때는 여러 명이 반환이 되게 해야한다.
+				// id로 검색을 했을 때는 
+				// 검색된 회원 정보는 회원 한 명! 
+				// 이름으로 검색했을 때는
+				// 검색된 모든 회원 정보가 리스팅되면 됨 
+				action = new MemberSearchAction();
 				break;
 			case 7:
 				break;
