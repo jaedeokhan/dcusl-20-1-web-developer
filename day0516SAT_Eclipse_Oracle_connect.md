@@ -211,9 +211,9 @@ public class ConnectionTest {
 		// 데이터베이스에 데이터를 삽입하는 SQL 구문 (INSERT)
 		// 1. INSERT INTO 테이블명  VALUES(데이터1, 데이터2, 데이터3, 데이터 4);
 		String sql = "INSERT INTO member VALUES('" + id + "','" 
-												    + name + "','"
-												    + addr + "','" 
-												    + passwd + "')";
+							   + name + "','"
+							   + addr + "','" 
+							   + passwd + "')";
 		Statement stmt = null;
 		
 		// 데이터베이스 작업을 할때는 항상 예외처리를 해야한다.
