@@ -62,6 +62,13 @@ CREATE TABLE member(
 4. Connection 객체 생성
   - Connection : 데이터베이스와 연결을 하는 역할
 
+5. Statement 객체 생성
+   - Statement : SQL 구문을 데이터베이스 전송하는 역할을 한다.
+5-1. int executeUpdate(String sql){}
+   - SELECT 구문을 제외한 INSERT, UPDATE, DELETE 등의 SQL 구문을 실행할 때 사용하는 메소드
+   - SQL 구문을 실행한 후 적용된 행수를 반환해주는 메소드이다.
+   
+ 
 ```
 #### 3.1.1 드라이버 파일을 클래스 패스에 복사한다.
 
@@ -87,7 +94,7 @@ public class ConnectionTest {
 }
 ```
 
-#### 3.1.2 메모리에 데이터베이스 드라이버를 로딩하기. 
+#### 3.1.3 메모리에 데이터베이스 드라이버를 로딩하기. 
 * static {}
 
 > CoonectionTest.java
@@ -116,7 +123,7 @@ public class ConnectionTest {
 }
 ```
 
-#### 3.1.3 Connection 객체를 생성한다.
+#### 3.1.4 Connection 객체를 생성한다.
 * Connection con;  : 인터페이스 변수 정의
 * void connect(){} :
    * DriverManager.getConnection("연결정보", "계정", "비밀번호"); 사용해서 con 인터페이스 변수에게 넘겨주고, success 판단하기.
@@ -163,6 +170,94 @@ public class ConnectionTest {
 
 ```
 
+#### 3.1.5 Statement 객체 생성
+* Statement : SQL 구문을 데이터베이스 전송하는 역할을 한다.
+   * int executeUpdate(String sql){] 
+   
+> ConnectionTest.java
+
+```java
+import java.sql.*;
+public class ConnectionTest {
+	// Connection이라고 인터페이스 데이터 변수 정의
+	Connection con;
+	static {
+		// static 요것은 클래스를 읽자마자 바로 실행되는 영역이다.
+		// 즉, 클래스를 읽자마자 oracle drive를 바로 읽어들이려고 하는 것이다.
+		// forName() 메소드는 괄호안에 있는 클래스를 메모리에 로딩하는 것이다.
+		// forName() 처리를 하면 반드시 예외처리를 해줘야한다.
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	void connect() {
+		// db 연결 작업을 해주는 것.
+		try {
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE",
+											  "java",
+											  "java");
+			System.out.println("Connection Success!!");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	void insert(String id, String name, String addr, String passwd) {
+		// 데이터베이스에 데이터를 삽입하는 SQL 구문 (INSERT)
+		// 1. INSERT INTO 테이블명  VALUES(데이터1, 데이터2, 데이터3, 데이터 4);
+		String sql = "INSERT INTO member VALUES('" + id + "','" 
+												    + name + "','"
+												    + addr + "','" 
+												    + passwd + "')";
+		Statement stmt = null;
+		
+		// 데이터베이스 작업을 할때는 항상 예외처리를 해야한다.
+		try {
+			connect();
+			stmt = con.createStatement();
+			int insertCount = stmt.executeUpdate(sql);
+			
+			// insertCount 가 0을 넘는다면 데이터가 하나라도 삽입이 된 것이다.
+			if (insertCount > 0) {
+				System.out.println("INSERT Success!!");
+			}
+			else {
+				System.out.println("INSERT Fail!!");
+			}
+			
+		} catch (SQLException e) {
+			// TODO: handle exception
+			// 발생한 예외 정보를 출력해주는 메소드이다.
+			e.printStackTrace();
+		}
+		finally {
+			// 작업한 리소르를 모두 해제해주기.
+			try {
+				con.close();
+				stmt.close();	
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+		ConnectionTest conn =  new ConnectionTest();
+		
+//		conn.connect();
+		conn.insert("bbb", "한재덕", "대구시", "1234");
+		
+	}
+}
+```
+
+#### 3.2 
 
 
 
