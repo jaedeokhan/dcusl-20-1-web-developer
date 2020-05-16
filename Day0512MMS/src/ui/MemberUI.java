@@ -16,7 +16,8 @@ import vo.MemberVO;
 public class MemberUI {
 	
 	// public static으로  ArrayList
-	public static ArrayList<MemberVO> memberList = new ArrayList<MemberVO>(); 
+	// 이제는 DB로 관리하기 때문에 ArrayList는 필요가 없다.
+	//	public static ArrayList<MemberVO> memberList = new ArrayList<MemberVO>(); 
 	public static void main(String[] args) {
 	
 		Scanner scan = new Scanner(System.in);
