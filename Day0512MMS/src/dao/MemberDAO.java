@@ -265,8 +265,6 @@ public class MemberDAO {
 					
 					memberList.add(memberVO);
 				}while(rs.next());
-				
-			
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
