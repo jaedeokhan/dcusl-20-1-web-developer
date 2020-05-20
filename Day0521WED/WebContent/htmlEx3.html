@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Form Test</title>
+</head>
+<body>
+   <center>
+      <form action="/Day0521WED/ServeltEx3" method="post">
+	     <table border="2">
+	        <tr>
+	           <th>취미</th>
+	           	<td> 
+				   <!-- 배열로 가져올 것이다. -->
+	           	  <input type="checkbox" name="운동" value="운동">운동 
+	           	  <input type="checkbox" name="check" value="독서">독서
+	           	  <input type="checkbox" name="check" value="게임">게임
+	           </td>
+	        </tr>
+	           <th>직업</th>
+	           <td>
+	              <select name="fruit">
+	                 <option value="사과">사과</option>
+	                 <option value="딸기">딸기</option>	 
+	                 <option value="배">배</option>	                              
+	              </select>
+	           </td>
+	        </tr>
+	        <tr>
+	           <th>소개</th>
+	           <td>
+	              <textarea name="content" cols="30" rows="10"></textarea>
+	           </td>
+	        </tr>
+	        <tr>
+	           <td colspan="2" align="center"> 
+	              <input type="submit" value="OK">
+	              <input type="reset" value="cancel">
+	           </td>
+	        </tr>
+	     </table>
+      </form>
+   </center>
+</body>
+</html>

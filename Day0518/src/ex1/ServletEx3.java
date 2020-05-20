@@ -8,18 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementa\tion class HelloServlet
+ * Servlet implementation class ServletEx3
  */
-// Servlet 을 하나 만들어서 매핑 작업을 실행 가능하게 선언해주는 것이다.
-@WebServlet("/HelloServlet")
-public class HelloServlet extends HttpServlet {
-	// 객체의 고유한 UID
+@WebServlet("/ServletEx3")
+public class ServletEx3 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HelloServlet() {
+    public ServletEx3() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,15 +27,15 @@ public class HelloServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: GET ").append(request.getContextPath());
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
-
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: POST ").append(request.getContextPath());
+		doGet(request, response);
 	}
 
 }
