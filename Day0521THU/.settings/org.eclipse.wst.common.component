@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="Day0520WED">
+    <wb-module deploy-name="Day0521THU">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="java-output-path" value="/Day0520WED/build/classes"/>
-        <property name="context-root" value="Day0520WED"/>
+        <property name="context-root" value="Day0521THU"/>
+        <property name="java-output-path" value="/Day0521THU/build/classes"/>
     </wb-module>
 </project-modules>
