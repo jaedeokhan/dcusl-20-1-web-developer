@@ -1,4 +1,4 @@
-package ex1;
+
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -25,26 +25,17 @@ public class SingUpEx extends HttpServlet {
 	private Statement stmt;
 	private ResultSet rs;
 	
-	public void init(ServletConfig config) throws ServletException {
-
-		try {
-			String dbURL = "jdbc:mysql://localhost:3306/bbs?characterEncoding=UTF-8&serverTimezone=UTC";
-			String dbID = "root";
-			String dbPW = "root";
-			
-			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection(dbURL, dbID, dbPW);
-			System.out.println("Connection Success!!");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+//	public void init(ServletConfig config) throws ServletException {
+//
+//	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		DBAction db = DBAction.getInstance();
+		conn = db.getConnection();
 		
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html");
@@ -80,38 +71,40 @@ public class SingUpEx extends HttpServlet {
 			// 삼항 연산자를 사용해서 바로 처리하기.
 			msg = stmt.executeUpdate(sql) > 0 ? "회원가입 성공!" : "회원가입 실패!";
 			out.println("<center><h2>" + msg + "</h2></center>");
-			
+			out.println("<center><p><a href='/Day0523SAT/MemberServletList'>회원가입 목록보기 Click!!</a></p></center>");
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
+		out.close();
 		
 		String select = "SELECT * FROM signup";
 		
-		
-		try {
-			stmt = conn.createStatement();
-			rs = stmt.executeQuery(select);
-			
-			out.println("<center><h2>현재 회원가입한 목록</h2><center>");
-			out.println("<center><table border='1'>");
-			out.println("<tr><th>ID</th>"
-					      + "<th>PW</th>"
-					      + "<th>Email</th>"
-					      + "<th>Jobs</th></tr>");
-			
-			while (rs.next()) {
-				
-				out.println("<tr><td>" + rs.getString(1) + "</td>");
-				out.println("<td>" + rs.getString(2) + "</td>");
-				out.println("<td>" + rs.getString(3) + "</td>");
-				out.println("<td>" + rs.getString(4) + "</td></tr>");
-			}
-			out.println("</table><center>");
-			out.close();
-			
-		} catch(SQLException e) {
-			e.printStackTrace();
-		}
+//		
+//		try {
+//			stmt = conn.createStatement();
+//			rs = stmt.executeQuery(select);
+//			
+//			out.println("<center><h2>현재 회원가입한 목록</h2><center>");
+//			out.println("<center><table border='1'>");
+//			out.println("<tr><th>ID</th>"
+//					      + "<th>PW</th>"
+//					      + "<th>Email</th>"
+//					      + "<th>Jobs</th></tr>");
+//			
+//			while (rs.next()) {
+//				
+//				out.println("<tr><td>" + rs.getString(1) + "</td>");
+//				out.println("<td>" + rs.getString(2) + "</td>");
+//				out.println("<td>" + rs.getString(3) + "</td>");
+//				out.println("<td>" + rs.getString(4) + "</td></tr>");
+//			}
+//			out.println("</table><center>");
+//			
+//			
+//		} catch(SQLException e) {
+//			e.printStackTrace();
+//		}
+//		out.close();
 		
 	}
 	
