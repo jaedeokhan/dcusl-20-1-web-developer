@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+        header {
+            background-color : lightgrey;
+            height : 100px;
+        }
+        nav {
+            background-color : #339999;
+            color : white;
+            width : 200px;
+            height  :300px;
+            float : left;
+            margin-right : 20px;
+        }
+        section {
+            /* width : 200px; */
+            width : 100%;
+            text-align : left;
+            /* float : left; */
+            padding : 10px;
+        }
+        footer {
+            background-color : #FFCC00;
+            height : 100px;
+            clear : both;
+        }
+        header, nav, section, footer { text-align : center;}
+        header, footer { line-height : 100px;}
+        /* nav, section { line-height : 240px;} */
+    </style>
+</head>
+<body>
+    <h1>HTML5 레이아웃</h1>
+    <header>
+        <h2>HEADER 영역</h2>
+    </header>
+    <nav>
+        <h2>NAV 영역</h2>
+    </nav>
+    <section>
+        <p>SECTION 영역</p>
+        <form action="/Day0525MON/MemberServletInsert" method="post">
+            <fieldset>
+               <legend>회원가입</legend>
+               <p>아이디 : <input type="text" size="12" maxlength="8" name="id"></p>
+               <p>비밀번호 : <input type="password" size="12" maxlength="8" name="pw"></p>
+               <p>메일 수신 여부 : 
+                  <input type="radio" value="y" name="receive">Y
+                  <input type="radio" value="n" name="receive">N
+               </p>
+               <p>관심분야 : 
+                 <input type="checkbox" value="HTML" name="chk">HTML
+                 <input type="checkbox" value="CSS" name="chk">CSS
+                 <input type="checkbox" value="JavaScript" name="chk">JavaScript
+               </p>
+               <input type="image" src="" alt="검색">
+               <input type="submit" value="전송">
+               <input type="reset" value="취소">
+               <input type="button" value="확인">         
+            </fieldset>
+         </form>
+    </section>
+    <footer>
+        <h2>FOTTER 영역</h2>
+    </footer>
+</body>
+</html>
