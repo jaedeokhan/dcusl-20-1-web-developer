@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+body {
+	font-size : small;
+}
+table{
+	border : thin solid gray;
+	border-collapse : collpase;
+}
+
+td, th {
+	border : thin dotted gray;
+	padding : 2px;
+	text-align : center;
+}
+
+th {
+	background-color : lightgray;
+}
+
+pre {
+	font-size : 90%;
+}

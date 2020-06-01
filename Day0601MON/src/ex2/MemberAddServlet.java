@@ -14,28 +14,40 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class MemberDeleteServlet
+ * Servlet implementation class MemberAddServlet
  */
-@WebServlet("/MemberDeleteServlet")
-public class MemberDeleteServlet extends HttpServlet {
-	
+@WebServlet("/MemberAddServlet")
+public class MemberAddServlet extends HttpServlet {
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		RequestDispatcher rd = request.getRequestDispatcher("/ch2/MemberForm.jsp");
+		rd.forward(request, response);
 		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		Connection conn = DBAction.getInstance().getConnection();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		
-		String sql = "DELETE FROM members WHERE MMO=?";
+		String sql = "INSERT INTO members(MMO, EMAIL, PWD, MNAME, CRE_DATE, MOD_DATE) "
+				+ "VALUES(SEQ_MMO.nextVal, ?, ?, ?, SYSDATE, SYSDATE)";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1,  request.getParameter("no"));
-			pstmt.executeUpdate(); 
+			pstmt.setString(1, request.getParameter("email"));
+			pstmt.setString(2, request.getParameter("password"));
+			pstmt.setString(3, request.getParameter("name"));
+			pstmt.executeUpdate();
 			response.sendRedirect("MemberListServlet");
-		
-		} catch (SQLException e) {e.printStackTrace();}
-		finally {
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
 			try {
 				if (rs != null) rs.close();
 				if (pstmt != null) pstmt.close();
@@ -44,11 +56,7 @@ public class MemberDeleteServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-	}
-
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
 	}
 
 }

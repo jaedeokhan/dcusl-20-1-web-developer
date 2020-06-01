@@ -14,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import ex2.DBAction;
 
@@ -47,17 +48,21 @@ public class LoginServletEx extends HttpServlet {
 			rs = pstmt.executeQuery();
 			Member member = null;
 			if (rs.next()) {
-//				response.setContentType("text/html; charset=utf-8");
-//				member = new Member();
-//				member.setEmail(rs.getString("EMAIL"));
-//				member.setName(rs.getString("MNAME"));
-//				
+				response.setContentType("text/html; charset=utf-8");
+				member = new Member();
+				member.setEmail(rs.getString("EMAIL"));
+				member.setName(rs.getString("MNAME"));
+				if (member != null) {
+					response.setContentType("text/html; charset=utf-8"); 
 //				request.setAttribute("member", member);
 //				RequestDispatcher rd =
 //						request.getRequestDispatcher("/ch2/Login.jsp");
 //						rd.include(request, response);
-				response.sendRedirect("MemberListServlet");
-				
+					HttpSession session = request.getSession();
+					session.setAttribute("member", member);
+					session.setMaxInactiveInterval(10);
+					response.sendRedirect("MemberListServlet");
+				}
 			}
 			else {
 				RequestDispatcher rd = request.getRequestDispatcher("/ch2/LoginFail.jsp");

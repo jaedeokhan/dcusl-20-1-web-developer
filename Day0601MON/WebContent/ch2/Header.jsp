@@ -20,14 +20,14 @@
 	    	%>
 	    	   <span style="float:right;">
 	    	      <%= member.getName()%>
-	    	      <a style="color:white;" href="/Day0528THU/LogoutServlet">로그아웃</a>
+	    	      <a style="color:white;" href="/Day0601MON/LogoutServlet">로그아웃</a>
 	    	   </span>
 	    	<% 
 	    	// Login Fail
 	    	}else {
 	    %>		
 	    	   <script type="text/javascript">
-	    	      location.href = "/Day0528THU/ch2/LoginForm.jsp"
+	    	      location.href = "/Day0601MON/ch2/LoginForm.jsp"
 	    	   </script>
 	    <% 	
 	    	}

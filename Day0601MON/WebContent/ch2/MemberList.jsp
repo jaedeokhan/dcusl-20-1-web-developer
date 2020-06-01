@@ -30,7 +30,7 @@
 		ArrayList<Member> members = (ArrayList<Member>)request.getAttribute("members"); 
 	%>
 	<h2>회원목록</h2>
-	<h3><a href="/Day0528THU/MemberAddServlet">신규 회원 추가하기</a></h2>
+	<h3><a href="/Day0601MON/MemberAddServlet">신규 회원 추가하기</a></h2>
 	<table class="centertable" border="1"> 
 	<%
 		for (Member member : members) {
@@ -57,7 +57,7 @@
 			   <%= member.getModifiedDate() %>
 			</td>
 			<td>
-			   <a href="/Day0528THU/MemberUpdateServlet?no=<%= member.getNo() %>">
+			   <a href="/Day0601MON/MemberUpdateServlet?no=<%= member.getNo() %>">
 			   [ 수정  ]
 			   </a> 
 			</td>
