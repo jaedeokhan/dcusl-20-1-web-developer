@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+   <script type="text/javascript">
+      function onfocusEvent(){
+    	  alert("onfocus 실행되었습니다.");
+    	  
+      }
+      
+      function myFocusFunction2(){
+    	document.getElementById("test").style.backgroundColor="yellow";
+      }
+      
+      var x = document.getElementById("in_out");
+      x.addEventListener("focusin", myFocusFunction);
+      x.addEventListener("focusout", myBlurFunciton);
+      
+      function myFocusFunction(){
+    	  style.color  = "blue";
+      }
+      
+      function myBlurFunction(){
+    	  style.color  ="";
+      }
+   </script>
+</head>
+<body>
+
+   <input type="text" value="포커스 얻을시 실행" onfocus="onfocusEvent();" name="" />
+   <input id="test" type="text" value="포커스 얻을시 실행" onfocus="myFocusFunction2();" name="test" />
+   <h2 id="in_out">In_Out Test</h2>
+</body>
+</html>

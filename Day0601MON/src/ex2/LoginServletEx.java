@@ -42,7 +42,10 @@ public class LoginServletEx extends HttpServlet {
 				HttpSession session = request.getSession();
 				session.setAttribute("member", member);
 //				session.setMaxInactiveInterval(10);
+				
+				
 				response.sendRedirect("MemberListServlet");
+				
 				
 			}
 			else {

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Refresh" content="1;url=/Day0528THU/ch2/LoginForm.jsp">
+<meta http-equiv="Refresh" content="1;url=/Day0601MON/ch2/LoginForm.jsp">
 <title>Insert title here</title>
 </head>
 <body>

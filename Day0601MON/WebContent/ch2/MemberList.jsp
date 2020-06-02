@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.*" %>
 <%@ page import="ex2.Member" %>
 
 <!DOCTYPE html>
@@ -16,22 +16,24 @@
 
    .centertable {
    	  margin : 0px auto;
+   	  text-align : center;
    }
 
 </style>
 </head>
 <body>
-	<header>
-	   <jsp:include page="Header.jsp" />
-	</header>
-	
+   <header>
+      <jsp:include page="Header.jsp" />
+   </header>
 	<section>
 	<%
 		ArrayList<Member> members = (ArrayList<Member>)request.getAttribute("members"); 
 	%>
 	<h2>회원목록</h2>
-	<h3><a href="/Day0601MON/MemberAddServlet">신규 회원 추가하기</a></h2>
+	<h3><a href="/Day0601MON/MemberAddServlet">신규 회원 추가하기</a></h3>
 	<table class="centertable" border="1"> 
+
+		<tr><th>MMO</th><th>EMAIL</th><th>PWD</th><th>MNAME</th><th>CRE_DATE</th><th>MOD_DATE</th><th>수정</th></tr>
 	<%
 		for (Member member : members) {
 	%>	
@@ -41,7 +43,6 @@
 			</td>
 			<td>
 			      <%= member.getName() %>
-			   </a>
 			</td>
 			<td>
 			   <%= member.getEmail() %>
@@ -51,7 +52,6 @@
 			</td>
 			<td>
 			      <%= member.getCreateDate()%>
-			   </a>
 			</td>
 			<td>
 			   <%= member.getModifiedDate() %>

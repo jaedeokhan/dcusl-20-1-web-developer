@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class OracleMemberDao {
 
@@ -19,9 +22,10 @@ public class OracleMemberDao {
 			pstmt.setString(1,  email);
 			pstmt.setString(2, pw);
 			rs = pstmt.executeQuery();
+			Member member = null;
 			
 			if (rs.next()) {
-				return new Member()
+				return member = new Member()
 						.setName(rs.getString("MNAME"))
 						.setEmail(rs.getString("EMAIL"));
 			}
@@ -42,6 +46,42 @@ public class OracleMemberDao {
 				e.printStackTrace();
 			}
 		}
+		return null;
+	}
+
+	public List<Member> selectList() throws Exception{
+		
+		Connection conn = DBAction.getInstance().getConnection();
+		Statement stmt = null;
+		ResultSet rs = null;
+		String sql ="SELECT * FROM MEMBERS ORDER BY MMO ASC";
+		ArrayList<Member> members = null;
+		
+		try {
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			members = new ArrayList<Member>();
+			
+			while(rs.next()) {
+				members.add(new Member()
+				.setNo(rs.getInt(1))              // MMO
+				.setEmail(rs.getString(2)) 		  // EMAIL
+				.setPassword(rs.getString(3))	  // PWD
+				.setName(rs.getString(4))		  // MNAME
+				.setCreateDate(rs.getDate(5))	  // CRE_DATE
+				.setModifiedDate(rs.getDate(6))); // MOD_DATE
+			}
+			
+			return members;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (rs != null) rs.close();
+			if (stmt != null) stmt.close();
+			if (conn != null) conn.close();
+		}
+		
 		return null;
 	}
 	
