@@ -23,6 +23,9 @@ public class MemberUpdateServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+//		OracleMemberDao memberDao = new OracleMemberDao();
+//		memberDao.UpdateSelect();
+		
 		Connection conn = DBAction.getInstance().getConnection();
 		Statement stmt = null;
 		ResultSet rs = null;

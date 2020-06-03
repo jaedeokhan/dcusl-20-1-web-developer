@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
 body {
-	font-size : small;
 }
 table{
 	border : thin solid gray;
 	border-collapse : collpase;
+	font-size : 35px;
 }
 
 td, th {
@@ -19,5 +19,5 @@ th {
 }
 
 pre {
-	font-size : 90%;
+	font-size : 50px;
 }

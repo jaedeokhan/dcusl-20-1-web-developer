@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+   function inputChecked(obj){
+	   alert("값을 입력해주세요");
+	   obj.action = "/Day0601MON/MemberListServlet";
+	   obj.submit();
+   }
+</script>
+</head>
+<body>
+   <form action="#" method="post">
+      <input type="text" name="id"/>
+      <input type="button" value="전송" onclick="inputChecked(this.form)"/>
+   </form>
+</body>
+</html>

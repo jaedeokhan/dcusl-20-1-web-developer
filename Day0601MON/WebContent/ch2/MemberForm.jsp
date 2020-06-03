@@ -10,10 +10,10 @@
 <body>
 	<jsp:include page="Header.jsp" />
 	<h1>회원 등록</h1>
-	<form action="/Day0528THU/MemberAddServlet" method="post">
+	<form action="/Day0601MON/MemberAddServlet" method="post">
 	   이름 : <input type="text" name="name"><br>
 	   이메일 :<input type="text" name="email"><br>
-	   암호 : <input type="password" name="password">
+	   암호 : <input type="password" name="pw">
 	 	  <input type="submit" value="추가">
 	 	  <input type="reset" value="취소">
 	</form>

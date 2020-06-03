@@ -84,5 +84,35 @@ public class OracleMemberDao {
 		
 		return null;
 	}
+
+		
+
+	public void Insert(Member member) {
+		
+		Connection conn = DBAction.getInstance().getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "INSERT INTO members(MMO, EMAIL, PWD, MNAME, CRE_DATE, MOD_DATE) "
+				+ "VALUES(SEQ_MMO.nextVal, ?, ?, ?, SYSDATE, SYSDATE)";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, member.getEmail());
+			pstmt.setString(2, member.getPassword());
+			pstmt.setString(3, member.getName());
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) rs.close();
+				if (pstmt != null) pstmt.close();
+				if (conn != null) conn.close();
+			} catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 	
 }

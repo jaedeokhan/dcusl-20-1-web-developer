@@ -30,33 +30,48 @@ public class MemberAddServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		request.setCharacterEncoding("UTF-8");
-		Connection conn = DBAction.getInstance().getConnection();
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String sql = "INSERT INTO members(MMO, EMAIL, PWD, MNAME, CRE_DATE, MOD_DATE) "
-				+ "VALUES(SEQ_MMO.nextVal, ?, ?, ?, SYSDATE, SYSDATE)";
+		response.setCharacterEncoding("UTF-8");
 		
-		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, request.getParameter("email"));
-			pstmt.setString(2, request.getParameter("password"));
-			pstmt.setString(3, request.getParameter("name"));
-			pstmt.executeUpdate();
-			response.sendRedirect("MemberListServlet");
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if (rs != null) rs.close();
-				if (pstmt != null) pstmt.close();
-				if (conn != null) conn.close();
-			} catch(SQLException e) {
-				e.printStackTrace();
-			}
-		}
+		OracleMemberDao memberDao = new OracleMemberDao();
+		memberDao.Insert(new Member().setEmail(request.getParameter("email"))
+				.setName(request.getParameter("pw"))
+				.setPassword(request.getParameter("name")));
 		
+		response.sendRedirect("MemberListServlet");
+		
+//		Member member = new OracleMemberDao()
+//		.Insert(request.getParameter("name"), request.getParameter("email"), request.getParameter("pw"));
+
+
+		//request.setCharacterEncoding("UTF-8");
+		//Connection conn = DBAction.getInstance().getConnection();
+		//PreparedStatement pstmt = null;
+		//ResultSet rs = null;
+		//String sql = "INSERT INTO members(MMO, EMAIL, PWD, MNAME, CRE_DATE, MOD_DATE) "
+		//		+ "VALUES(SEQ_MMO.nextVal, ?, ?, ?, SYSDATE, SYSDATE)";
+		//
+		//try {
+		//	pstmt = conn.prepareStatement(sql);
+		//	pstmt.setString(1, request.getParameter("email"));
+		//	pstmt.setString(2, request.getParameter("password"));
+		//	pstmt.setString(3, request.getParameter("name"));
+		//	pstmt.executeUpdate();
+		//	response.sendRedirect("MemberListServlet");
+		//	
+		//} catch (SQLException e) {
+		//	e.printStackTrace();
+		//} finally {
+		//	try {
+		//		if (rs != null) rs.close();
+		//		if (pstmt != null) pstmt.close();
+		//		if (conn != null) conn.close();
+		//	} catch(SQLException e) {
+		//		e.printStackTrace();
+		//	}
+		//}
 	}
+	
 
 }

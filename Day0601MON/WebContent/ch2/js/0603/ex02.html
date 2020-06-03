@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+   function onloadEvent(obj) {
+	   alert("onloadEvent 호출" + obj.value);
+	   
+	   if (obj.value == ""){
+		   alert("값을 입력하지 않았습니다.");
+	   }
+	   else{
+		   document.form.n2.focus();
+	   }
+	   
+   }   
+   
+</script>
+</head>
+<body onload="document.form.n.focus();">
+   <form action="#" name="form">
+      <input type="text" name="n" onblur="onloadEvent(this)"/>
+      <input type="text" name="n2" />
+   </form>
+
+</body>
+</html>
