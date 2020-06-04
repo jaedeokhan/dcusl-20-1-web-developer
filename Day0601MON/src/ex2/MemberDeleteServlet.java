@@ -21,29 +21,10 @@ public class MemberDeleteServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setCharacterEncoding("UTF-8");
-		Connection conn = DBAction.getInstance().getConnection();
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+		OracleMemberDao memberDao = new OracleMemberDao();
+		memberDao.Delete(request.getParameter("no"));
+		response.sendRedirect("MemberListServlet");
 		
-		String sql = "DELETE FROM members WHERE MMO=?";
-		
-		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1,  request.getParameter("no"));
-			pstmt.executeUpdate(); 
-			response.sendRedirect("MemberListServlet");
-		
-		} catch (SQLException e) {e.printStackTrace();}
-		finally {
-			try {
-				if (rs != null) rs.close();
-				if (pstmt != null) pstmt.close();
-				if (conn != null) conn.close();
-			} catch(SQLException e) {
-				e.printStackTrace();
-			}
-		}
 	}
 
 

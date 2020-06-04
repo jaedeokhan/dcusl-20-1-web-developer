@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+   // 함수를 선언
+   function test(name){
+	 var output = "Hello " + name;
+	 return function(){
+		 alert(output);
+	 };
+   }
+    
+   // 변수 선언
+   var test1 = test("jaedeok");
+   test1();
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -16,7 +16,7 @@
 	<form action="/Day0601MON/MemberUpdateServlet" method="post">
 	   번호 : <input type="text" name="no" value="<%=member.getNo() %>" readonly /><br>
 	   이메일 :<input type="text" name="email" value="<%=member.getEmail() %>"><br>
-	   암호 : <input type="password" name="password" value="<%=member.getPassword() %>"><br>
+	   암호 : <input type="password" name="pw" value="<%=member.getPassword() %>"><br>
  	   이름 : <input type="text" name="name" value="<%=member.getName() %>"><br>
 	   가입일 : <%=member.getCreateDate() %> <br>
 	   수정일 : <%=member.getModifiedDate() %> <br>

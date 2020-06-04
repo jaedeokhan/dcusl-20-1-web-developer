@@ -22,83 +22,38 @@ public class MemberUpdateServlet extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-//		OracleMemberDao memberDao = new OracleMemberDao();
-//		memberDao.UpdateSelect();
-		
-		Connection conn = DBAction.getInstance().getConnection();
-		Statement stmt = null;
-		ResultSet rs = null;
-//		String sql = "UPDATE members SET EMAIL=? PWD=? MNAME=?"
-//				+ " CRE_DATE=SYSDATE MOD_DATE=SYSDATE WHERE MMO=?";
-//		
-		try {
-			stmt = conn.createStatement();
-			rs = stmt.executeQuery("SELECT MMO, EMAIL, PWD, MNAME, CRE_DATE, MOD_DATE FROM MEMBERS"
-					+ " WHERE MMO=" + request.getParameter("no"));
 			
-			if (rs.next()) {
-				request.setAttribute("member", new Member().setNo(rs.getInt("MMO"))
-					   .setEmail(rs.getString("EMAIL"))
-					   .setPassword(rs.getString("PWD"))
-					   .setName(rs.getString("MNAME"))
-					   .setCreateDate(rs.getDate("CRE_DATE"))
-				       .setModifiedDate(rs.getDate("MOD_DATE")));
-				
-			} else {
-				throw new Exception("해당 번호의 회원을 찾을 수 없습니다.");
-			}
+		try {
+			request.setCharacterEncoding("UTF-8");
+			OracleMemberDao memberDao = new OracleMemberDao();
+			Member member = memberDao.UpdateSelect(request.getParameter("no"));
+			request.setAttribute("member", member);
 			RequestDispatcher rd = request.getRequestDispatcher("/ch2/MemberUpdateForm.jsp");
 			rd.forward(request, response);
-			
-//			stmt = conn.prepareStatement(sql);
-//			stmt.setString(1, request.getParameter("email"));
-//			stmt.setString(2, request.getParameter("password"));
-//			stmt.setString(3, request.getParameter("name"));
-			
-			
-		} catch (Exception e) {e.printStackTrace();}
-		finally {
-			try {
-				if (rs != null) rs.close();
-				if (stmt != null) stmt.close();
-				if (conn != null) conn.close();
-			} catch(SQLException e) {
-				e.printStackTrace();
-			}
 		}
+		catch (Exception e) {e.printStackTrace();}
 		
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		Connection conn = DBAction.getInstance().getConnection();
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
 		
-		String sql = "UPDATE members SET EMAIL=?, PWD=?, MNAME=?"
-				+ " WHERE MMO=?";
+//		memberDao.Insert(new Member().setEmail(request.getParameter("email"))
+//				.setName(request.getParameter("pw"))
+//				.setPassword(request.getParameter("name")));
 		
 		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, request.getParameter("email"));
-			pstmt.setString(2, request.getParameter("password"));
-			pstmt.setString(3, request.getParameter("name"));
-			pstmt.setString(4,  request.getParameter("no"));
-			pstmt.executeUpdate();
-			response.sendRedirect("MemberListServlet");
 		
-		} catch (SQLException e) {e.printStackTrace();}
-		finally {
-			try {
-				if (rs != null) rs.close();
-				if (pstmt != null) pstmt.close();
-				if (conn != null) conn.close();
-			} catch(SQLException e) {
-				e.printStackTrace();
-			}
+			OracleMemberDao memberDao = new OracleMemberDao();
+			memberDao.Update(new Member().setNo(Integer.parseInt(request.getParameter("no")))
+					.setEmail(request.getParameter("email"))
+					.setPassword(request.getParameter("pw"))
+					.setName(request.getParameter("name")));
+			
+			response.sendRedirect("MemberListServlet");
 		}
+		catch (Exception e) {e.printStackTrace();}
+		
 	}
 
 }

@@ -8,6 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
+
 public class OracleMemberDao {
 
 	public Member exist(String email, String pw) throws Exception{
@@ -113,6 +115,102 @@ public class OracleMemberDao {
 				e.printStackTrace();
 			}
 		}
+	}
+
+	public Member UpdateSelect(String no) {
+		
+		Connection conn = DBAction.getInstance().getConnection();
+		Statement stmt = null;
+		ResultSet rs = null;
+		Member member = null;
+//		String sql = "UPDATE members SET EMAIL=? PWD=? MNAME=?"
+//				+ " CRE_DATE=SYSDATE MOD_DATE=SYSDATE WHERE MMO=?";
+//		
+		try {
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery("SELECT MMO, EMAIL, PWD, MNAME, CRE_DATE, MOD_DATE FROM MEMBERS"
+					+ " WHERE MMO=" + no);
+			
+			if (rs.next()) {
+				member = new Member();
+				return new Member().setNo(rs.getInt("MMO"))
+					   .setEmail(rs.getString("EMAIL"))
+					   .setPassword(rs.getString("PWD"))
+					   .setName(rs.getString("MNAME"))
+					   .setCreateDate(rs.getDate("CRE_DATE"))
+				       .setModifiedDate(rs.getDate("MOD_DATE"));
+				
+			} else {
+				throw new Exception("해당 번호의 회원을 찾을 수 없습니다.");
+			}
+			
+		} catch (Exception e) {e.printStackTrace();}
+		finally {
+			try {
+				if (rs != null) rs.close();
+				if (stmt != null) stmt.close();
+				if (conn != null) conn.close();
+			} catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return null;
+	}
+
+	public void Update(Member member) {
+		
+		Connection conn = DBAction.getInstance().getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String sql = "UPDATE members SET EMAIL=?, PWD=?, MNAME=?"
+				+ " WHERE MMO=?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, member.getEmail());
+			pstmt.setString(2, member.getPassword());
+			pstmt.setString(3, member.getName());
+			pstmt.setInt(4,  member.getNo());
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {e.printStackTrace();}
+		finally {
+			try {
+				if (rs != null) rs.close();
+				if (pstmt != null) pstmt.close();
+				if (conn != null) conn.close();
+			} catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
+
+	public void Delete(String no) {
+		Connection conn = DBAction.getInstance().getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String sql = "DELETE FROM members WHERE MMO=?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,  no);
+			pstmt.executeUpdate(); 
+		
+		} catch (SQLException e) {e.printStackTrace();}
+		finally {
+			try {
+				if (rs != null) rs.close();
+				if (pstmt != null) pstmt.close();
+				if (conn != null) conn.close();
+			} catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
 	}
 	
 }
