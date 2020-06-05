@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+   <script>
+      var child = window.open('', '', 'width=300, height=200');
+      var width = screen.width;
+      var height = screen.height;
+      child.moveTo(0, 0);
+      child.resizeTo(width, height);
+      setInterval(function(){
+    	 child.resizeBy(-100, -100);
+    	 child.moveBy(10, 10);
+      }, 1000);
+   </script>
+</head>
+<body>
+
+</body>
+</html>

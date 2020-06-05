@@ -29,44 +29,40 @@
    </header>
 	<section>
 	<%
-		ArrayList<Member> members = (ArrayList<Member>)request.getAttribute("members"); 
+		ArrayList<Member> members = (ArrayList<Member>)request.getAttribute("members");
+	    
 	%>
 	<h2>회원목록</h2>
 	<h3><a href="/Day0601MON/MemberAddServlet">신규 회원 추가하기</a></h3>
 	<table class="centertable" border="1"> 
-
 		<tr><th>MMO</th><th>EMAIL</th><th>PWD</th><th>MNAME</th><th>CRE_DATE</th><th>MOD_DATE</th><th>수정</th></tr>
-	<%
-		for (Member member : members) {
-	%>	
-		<tr>
-			<td>
-			      <%= member.getNo() %>
-			</td>
-			<td>
-			      <%= member.getName() %>
-			</td>
-			<td>
-			   <%= member.getEmail() %>
-			</td>
-			<td>
-			   <%= member.getPassword() %>
-			</td>
-			<td>
-			      <%= member.getCreateDate()%>
-			</td>
-			<td>
-			   <%= member.getModifiedDate() %>
-			</td>
-			<td>
-			   <a href="/Day0601MON/MemberUpdateServlet?no=<%= member.getNo() %>">
-			   [ 수정  ]
-			   </a> 
-			</td>
-		</tr>
-	<% 		
-		}
-	%>
+		<c:forEach var="member" items="${members}">
+			<tr>
+				<td>
+				      ${member.no}
+				</td>
+				<td>
+				      ${member.name}
+				</td>
+				<td>
+				      ${member.email}
+				</td>
+				<td>
+				      ${member.password}
+				</td>
+				<td>
+				      ${member.createDate}
+				</td>
+				<td>
+				      ${member.modifiedDate}
+				</td>
+				<td>
+				   <a href="/Day0601MON/MemberUpdateServlet?no=${member.no}">
+				   [ 수정  ]
+				   </a> 
+				</td>
+			</tr>
+	    </c:forEach>
 	</table>
 	</section>
 	

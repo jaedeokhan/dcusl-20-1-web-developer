@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css"> 
+body
+{ 
+scrollbar-face-color:#dedede; 
+scrollbar-shadow-color:gray; 
+scrollbar-highlight-color:#ffffff;
+scrollbar-3dlight-color:#dedede; 
+scrollbar-darkshadow-color:#ffffff; 
+scrollbar-track-color:#f0f0f0; 
+scrollbar-arrow-color:#dedede
+} 
+input{background-color:#000000; color:white; border:0; height:18;font-family:돋움; font-size:12px; cursor: hand;}
+</style> 
+<script language="javascript">
+	
+	function tagDisplay(){
+	   var source = frm.editor.value;
+	   win = window.open("http://localhost:8081/Day0601MON/ch2/js/0605/ex08.html", "", "width=300, height=300");
+	   win.document.write(source);
+	};
+	
+	function tagClear(){
+		frm.editor.value = "";
+	}
+	
+	function tagRefresh(){
+		location.reload();
+	}
+</script>
+</head>
+<body topmargin=50>
+
+<center>
+   <form name="frm">
+      <input type="button" value="웹브라우저로 보기" onclick="tagDisplay()"/>
+      <input type="button" value="새 문서" onclick="tagClear()"/>
+   	  <input type="reset" value="새HTML페이지" onclick="tagRefresh()"/>
+</center>
+  
+<p>
+   <textarea rows="20" cols="60" name="editor" style="padding:5px; border:2 sliver solid;">
+&lt;html&gt;
+
+&lt;head&gt;
+&lt;title&gt; &lt;/title&gt;
+&lt;/head&gt;
+	
+&lt;body&gt;
+&lt;/body&gt;
+	
+&lt;/html&gt; 
+   </textarea>
+   </form>  
+</body>
+</html>

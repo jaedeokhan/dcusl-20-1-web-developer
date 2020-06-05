@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+   <script>
+      // 1초마다 함수를 실행
+      var intervalID = setInterval(function(){
+    	  alert('<p>' + new Date() + '</p>');
+      }, 1000);
+      
+      // 5초 후 함수를 실행
+      setTimeout(function(){
+    	  clearInterval(intervalID);
+      }, 5000);
+   </script>
+</head>
+<body>
+
+</body>
+</html>
