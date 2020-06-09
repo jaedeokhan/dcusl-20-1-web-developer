@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+   <script>
+      var output = '';
+      var score = 0;
+      var student = {
+    		  이름 : '홍길동',
+    		  국어 : 92, 수학 : 98,
+    		  영어 : 96, 과학 : 98
+      };
+      // in 키워드 사용
+      output += "'이름' in student:" + ('이름' in student) + '\n';
+      output += "'성별' in student:" + ('성별' in student);
+      score = student.국어 + student.수학 + student.영어 + student.과학;
+      alert(output);
+      alert(score);
+   </script>
+</head>
+<body>
+
+</body>
+</html>

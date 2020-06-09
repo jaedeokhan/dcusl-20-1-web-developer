@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page isELIgnored="false" %>
 <%@ page import="java.util.*" %>
 <%@ page import="ex2.Member" %>
 <!DOCTYPE html>
@@ -16,6 +18,16 @@
    <div style="background-color:#00008b; text-align : center;
    		color:#ffffff; height:20px; padding:5px; ">
    		MemberSystem Header Page
+   		<!--  
+   		<c:choose>
+   			 <c:when test="${member != null && member.Email != null}">
+	                    	 
+	         </c:when>
+	         <c:otherwise>
+	                 	 
+             </c:otherwise>
+   		</c:choose>
+   		-->
 	    <%  // Login Sccuess
 	    	if (member != null && member.getEmail() != null){
 	    	%>

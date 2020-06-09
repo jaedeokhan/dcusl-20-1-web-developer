@@ -10,7 +10,7 @@ import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 
-public class OracleMemberDao {
+public class OracleMemberDao implements MemberDao{
 
 	public Member exist(String email, String pw) throws Exception{
 		
@@ -116,7 +116,6 @@ public class OracleMemberDao {
 			}
 		}
 	}
-
 	public Member UpdateSelect(String no) {
 		
 		Connection conn = DBAction.getInstance().getConnection();
@@ -211,6 +210,5 @@ public class OracleMemberDao {
 			}
 		}
 		
-	}
-	
+	}	
 }
