@@ -9,3 +9,5 @@ CREATE TABLE member (
    age NUMBER NOT NULL,
    country VARCHAR2(15) NOT NULL
 )
+
+SELECT * FROM member;
