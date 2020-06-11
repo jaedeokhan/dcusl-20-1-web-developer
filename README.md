@@ -7,7 +7,24 @@
    * 클래스, 메소드  
 3. 2020 0424 FRI Day 11 : [.md file](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0413-0511%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4%ED%99%9C%EC%9A%A9/day0424fri.md)
    * 클래스, 멤버변수, 메소드, 생성자, 자바 데이터 타입, this
-4.
-5.
-6.
+4. 2020 0425 SAT Day 12 : [.md file](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0413-0511%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4%ED%99%9C%EC%9A%A9/day0425sat.md)
+   * 패키지, 캡슐화, 접근 제어자, Integer.parseInt, NumberFormatException, charAt() method
+5. 2020 0427 MON Day 13 : [.md file](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0413-0511%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4%ED%99%9C%EC%9A%A9/day0427mon_extends.md)
+   * 상속, 형변환(묵시적, 암시적), 다형성, Object 형 변환, Override, Overloading, 은닉변수 사용
+6. 2020 0428 TUE Day 14 : [.md file](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0413-0511%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4%ED%99%9C%EC%9A%A9/day0428tue.md)
+   * 상속받은 객체들의 사용, 추상화
+7. 2020 0429 WED Day 15 : [.md file](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0413-0511%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4%ED%99%9C%EC%9A%A9/day0429wed.md)
+   * 추상화, 다형성, 인터페이스
+8. 2020 0506 WED : [.md file](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0413-0511%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4%ED%99%9C%EC%9A%A9/day0506wed_workshop.md)
+   * Wokshop 문제 풀이하기, for 문 두 문제, while if 활용, 성적 산출 프로그램, 족구팀 짜기, Car interface
+9. 2020 0507 THU : [.md file](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0413-0511%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4%ED%99%9C%EC%9A%A9/day0507_try_catch.md)
+   * 예외처리(try-catch), (try-catch-finally), 예외의 종류, throws, 사용자 정의 예외, String 클래스
+10. 2020 0508 FRI : [.md file](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0413-0511%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4%ED%99%9C%EC%9A%A9/day0508fri_String_Enum.md)
+   * String 객체, StringBuffer, String 클래스들의 메소드들, Enum, 오토박싱, 오토언박싱
+11. 2020 0509 SAT : [.md file](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0413-0511%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4%ED%99%9C%EC%9A%A9/day0509sat_WorkShop_1-18.md)
+   * WorkShop 1 ~17
+12. 2020 0511 MON : [.md file](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0413-0511%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4%ED%99%9C%EC%9A%A9/day0511mon_WorkShop17_Polynomial_equals_clone_JavaCollectionFramework_SetInterface_HashSet_TreeSet.md)
+   * 추상 클래스 활용, 다형성, 자바 컬렉션 인터페이스(Set => HashSet, TreeSet)
+13.
+14.
 
