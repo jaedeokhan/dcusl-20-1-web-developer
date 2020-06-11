@@ -35,7 +35,7 @@
       <label for="passwd">비밀번호 : </label>
       <input type="password" name="passwd" id="passwd">
       <label for="cookieUse">쿠키사용 : </label>
-      <input type="checkbox" name="cookieUse" id="cookieUse">
+      <input type="checkbox" name="cookieUse" id="cookieUse" value="on">
       <input type="submit" value="로그인">
       </fieldset>
    </form>

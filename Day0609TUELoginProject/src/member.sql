@@ -11,3 +11,21 @@ CREATE TABLE member (
 )
 
 SELECT * FROM member;
+
+DROP TABLE zipCode;
+
+CREATE TABLE zipCode(
+   num NUMBER PRIMARY KEY,
+   zip VARCHAR2(5) NOT NULL,
+   do VARCHAR2(15) NOT NULL,
+   si VARCHAR2(18) NOT NULL,
+   ro VARCHAR2(18) NOT NULL,
+   bunzi VARCHAR2(25) NOT NULL
+)
+
+CREATE SEQUENCE zipCode_seq;
+
+INSERT INTO zipCode VALUES(zipCode_seq.nextVal, '11111', '경상북도', '경산시', '하양1로', '1번지');
+INSERT INTO zipCode VALUES(zipCode_seq.nextVal, '22222', '경상북도', '경산시', '하양1로', '1번지');
+INSERT INTO zipCode VALUES(zipCode_seq.nextVal, '33333', '경상북도', '경산시', '하양1로', '1번지');
+INSERT INTO zipCode VALUES(zipCode_seq.nextVal, '44444', '경상북도', '경산시', '하양1로', '1번지');

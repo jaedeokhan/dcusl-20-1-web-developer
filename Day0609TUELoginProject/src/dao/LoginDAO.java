@@ -60,5 +60,31 @@ public class LoginDAO {
 		}
 		return loginMember;
 	}
+
+	public String selectId(String id) {
+		// TODO Auto-generated method stub
+		String dbId = "";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT * FROM member WHERE id = ?";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				dbId = rs.getString("id");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} 
+		finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return dbId;
+	}
 	
 }
