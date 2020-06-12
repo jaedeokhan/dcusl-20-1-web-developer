@@ -77,22 +77,64 @@
    * css => css Selector
    
 10. 0521 THU : [day0521thu_DB.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0511-0525%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9%2CSQL_CRUD/day0521thu_DB.md)
-   * Servlet의 기본 메소드들 - init(), service(), destory()
+    * Servlet의 기본 메소드들 - init(), service(), destory()
  
 11. 0521 THU : [day0521thu_Html_Servlet_.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0511-0525%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9%2CSQL_CRUD/day0521thu_Html_Servlet_.md)
-   * Table , html, servlet, DB
+    * Table , html, servlet, DB
 
 12. 0522 FRI : [day0522fri_Login_SingUp.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0511-0525%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9%2CSQL_CRUD/day0522fri_Login_SingUp.md)
-   * LoginPage 구현, SingupPage 구현
+    * LoginPage 구현, SingupPage 구현
    
 13. 0523 SAT : [day0523sat.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0511-0525%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9%2CSQL_CRUD/day0523sat.md)
-   * SingupExServlet.java 회원가입 구현해서 DB에 INSERT하기, Singleton, Connection Pool(DBCP)
+    * SingupExServlet.java 회원가입 구현해서 DB에 INSERT하기, Singleton, Connection Pool(DBCP)
    
 14. 0525 MON : [day0525mon_.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0511-0525%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9%2CSQL_CRUD/day0525mon_.md)
-   * Servlet, statment 와 preparedStatement 의 차이점, css, jsp
+    * Servlet, statment 와 preparedStatement 의 차이점, css, jsp
    
-
+### 0525-0609SQL활용_김현민
+1. 0526 TUE : [day0526tue_jsp_Gugudan_Calendar.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0525-0609SQL%ED%99%9C%EC%9A%A9_%EA%B9%80%ED%98%84%EB%AF%BC/day0526tue_jsp_Gugudan_Calendar.md)
+   * html,css => (header, nav, section, footer 구조) , jsp(선언 태그, 설정 태그, 출력 태그), jsp 내장 객체, EL과 JSTL이란?
    
+2. 0527 WED : [day0527wed_Login_include_forward.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0525-0609SQL%ED%99%9C%EC%9A%A9_%EA%B9%80%ED%98%84%EB%AF%BC/day0527wed_Login_include_forward.md)
+   * LoginTest를 구현해서 RequestDispatcher 를 사용해서 include, forward 사용하기
 
+3. 0528 THU : [day0528thu_Member_CRUD.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0525-0609SQL%ED%99%9C%EC%9A%A9_%EA%B9%80%ED%98%84%EB%AF%BC/day0528thu_Member_CRUD.md)
+   * Login 구현해서 CRUD 를 각각의 Servlet에서 처리 => model 1 version 
+   
+4. 0529 FRI : [day0529thu_.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0525-0609SQL%ED%99%9C%EC%9A%A9_%EA%B9%80%ED%98%84%EB%AF%BC/day0529thu_.md)
+   * MemberLogin 에서 Update, Delete 마무리하기, Session과 Cokiee 란?
+   
+5. 0601 MON : [day0601mon_MVC_pattern_Controller_dao_view.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0525-0609SQL%ED%99%9C%EC%9A%A9_%EA%B9%80%ED%98%84%EB%AF%BC/day0601mon_MVC_pattern_Controller_dao_view.md)
+   * MVC 비지니스 로직 구분, JSTL사용
+   
+6. 0602 TUE : [day0602tue_MemberListSelect_session_vs_request.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0525-0609SQL%ED%99%9C%EC%9A%A9_%EA%B9%80%ED%98%84%EB%AF%BC/day0602tue_MemberListSelect_session_vs_request.md)
+   * JSP과 Servlet에서 데이터를 주고받는 방법, EL => (HashMap, List), JS => (alert, confirm)
+   
+7. 0603 WED : [day0603wed_MemberListAdd.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0525-0609SQL%ED%99%9C%EC%9A%A9_%EA%B9%80%ED%98%84%EB%AF%BC/day0603wed_MemberListAdd.md)
+   * MemberListAdd.java 구현, EL , JS => (onloadEvent, onload, onblur)
+   
+8. 0604 THU : [day0604thu_MemberListUpdate_JSTL_condition_JS_condition_loop_function.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0525-0609SQL%ED%99%9C%EC%9A%A9_%EA%B9%80%ED%98%84%EB%AF%BC/day0604thu_MemberListUpdate_JSTL_condition_JS_condition_loop_function.md)
+   * MeberListUpdate.java, MemberDeleteServlet 구현, JSTL => (page scope, condition, loop)
+   
+9. 0605 FRI : [day0605fri_MemberDeleteServlet_JSTL_choose_foEach_forTokens_JS_function.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0525-0609SQL%ED%99%9C%EC%9A%A9_%EA%B9%80%ED%98%84%EB%AF%BC/day0605fri_MemberDeleteServlet_JSTL_choose_foEach_forTokens_JS_function.md)
+   * MemberListServlet 구현, JSTL => (choose, forEach, forTokens), JS => (setTimeout(), setInterval(), eval(), window 객체 사용), JS => (tagDisplay(), tagClear(), tagRefresh() 와 같은 사용자 정의 함수 만들기))
+   
+10. 0608 MON : [day0608mon_MemberDeleteServlet_MemberDao_js.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0525-0609SQL%ED%99%9C%EC%9A%A9_%EA%B9%80%ED%98%84%EB%AF%BC/day0608mon_MemberDeleteServlet_MemberDao_js.md)
+   * Client에서 .file 업로드해서 Server에 저장하기 구현 
+    
+### 0609SQL-0612_오정원
+1. 0609 TUE : [day0609tue_idol_model1-2_login.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0609SQL-0612_%EC%98%A4%EC%A0%95%EC%9B%90/day0609tue_idol_model1-2_login.md)
+   * 1>좋아하는 아이돌을 선택해서 선택한 아이돌의 사진을 출력하기 2> Model 1 방식과 Model 2 방식의 차이점 3> Model 2 방식을 활용해서 Login 구현하기.
+
+2. 0610 WED : [day0610wed_Model2Login_page_setAttribute_cookies.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0609SQL-0612_%EC%98%A4%EC%A0%95%EC%9B%90/day0610wed_Model2Login_page_setAttribute_cookies.md)
+   * 1> Model 2 방식 장점 2> Cookiee 와 Session 의 차이점 3> LoginProject 구현 - dao, service, vo, controller, view 
+
+3. 0611 THU : [day0611.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0609SQL-0612_%EC%98%A4%EC%A0%95%EC%9B%90/day0611.md)
+   * 1> Cookiee 와 Session 2> Cookiee 를 사용해서 로그인 후 사용시간 설정하기  
+
+### 0612-0622화면구현
+1. 0612 FRI : [0612FRI_memberRegistForm_ZipFind.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0612-0622%ED%99%94%EB%A9%B4%EA%B5%AC%ED%98%84/0612FRI_memberRegistForm_ZipFind.md)
+   * 1> 회원가입 페이지 구현 2> Model 2 version 1 방식을 사용해서 구현 3> 아이디 중복 체크 구현 4> 비밀번호 불일치 구현 5> 우편번호 검색 구현 
+   
 
 
