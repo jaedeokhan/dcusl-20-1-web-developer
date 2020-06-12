@@ -49,7 +49,11 @@
        var id = document.getElementById("id");
        
        // 윈도우를 띄워서 요청 URL을 준다. 즉 Servlet을 호출한다.
-       window.open("idCheck?id=" + id.value, "window1", "width=400, height=300");
+       window.open("IdCheck?id=" + id.value, "window1", "width=400, height=300");
+   };
+   
+   function findZip(){
+	   window.open("zipFind.jsp", "window", "width=400, height=300");
    };
    
 </script>
@@ -104,7 +108,7 @@
          </td>
          <td class="td_right">
             <input type="text" name="zip" id="zip" readonly="readonly"/>
-            <input type="button" value="우편번호찾기"/>
+            <input type="button" value="우편번호찾기" onclick="findZip()"/>
          </td>
       </tr>
       </tr>
@@ -114,7 +118,6 @@
          </td>
          <td class="td_right">
             <input type="text" name="addr1" id="addr1" readonly="readonly"/>
-            <input type="button" value="우편번호찾기"/>
          </td>
       </tr>
        <tr>
@@ -123,7 +126,6 @@
          </td>
          <td class="td_right">
             <input type="text" name="addr2" id="addr2" readonly="readonly"/>
-            <input type="button" value="우편번호찾기"/>
          </td>
       </tr>
        <tr>

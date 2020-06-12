@@ -16,11 +16,11 @@ public class IdCheckService {
 		// DAO는 이름을 SELECT와 같이 DB 명령어를 사용한다.
 		String dbId = loginDAO.selectId(id);
 		boolean idExist = false;
+		
 		if (dbId != null) {
 			idExist = true;
 		}
-		
-		
+	
 		close(con);
 		
 		return idExist;
