@@ -133,5 +133,38 @@ public class LoginDAO {
 				
 		return zipCodeList;
 	}
+
+	public int insertMember(MemberVO memberVO) {
+		
+		int insertCount = 0;
+		PreparedStatement pstmt = null;
+		String sql = "INSERT INTO member(id, passwd, name, zip, addr1, addr2, email, age, country)"
+				+ " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, memberVO.getId());
+			pstmt.setString(2, memberVO.getPasswd());
+			pstmt.setString(3, memberVO.getName());
+			pstmt.setString(4, memberVO.getZip());
+			pstmt.setString(5, memberVO.getAddr1());
+			pstmt.setString(6, memberVO.getAddr2());
+			pstmt.setString(7, memberVO.getEmail());
+			pstmt.setInt(8, memberVO.getAge());
+			pstmt.setString(9, memberVO.getCountry());
+			
+			insertCount = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} 
+		finally {
+			close(pstmt);
+		}
+		
+		return insertCount;
+	}
+
+	
 	
 }

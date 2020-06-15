@@ -122,10 +122,10 @@
       </tr>
        <tr>
          <td class="td_left">
-            <label for="addr1">상세주소 : </label>
+            <label for="addr2">상세주소 : </label>
          </td>
          <td class="td_right">
-            <input type="text" name="addr2" id="addr2" readonly="readonly"/>
+            <input type="text" name="addr2" id="addr2"/>
          </td>
       </tr>
        <tr>

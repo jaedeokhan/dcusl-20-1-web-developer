@@ -10,6 +10,8 @@ CREATE TABLE member (
    country VARCHAR2(15) NOT NULL
 )
 
+ALTER TABLE member MODIFY addr1 VARCHAR2(100);
+
 SELECT * FROM member;
 
 DROP TABLE zipCode;
@@ -29,3 +31,5 @@ INSERT INTO zipCode VALUES(zipCode_seq.nextVal, '11111', '경상북도', '경산
 INSERT INTO zipCode VALUES(zipCode_seq.nextVal, '22222', '경상북도', '경산시', '하양1로', '1번지');
 INSERT INTO zipCode VALUES(zipCode_seq.nextVal, '33333', '경상북도', '경산시', '하양1로', '1번지');
 INSERT INTO zipCode VALUES(zipCode_seq.nextVal, '44444', '경상북도', '경산시', '하양1로', '1번지');
+
+
