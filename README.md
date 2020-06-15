@@ -135,6 +135,14 @@
 ### 0612-0622화면구현
 1. 0612 FRI : [0612FRI_memberRegistForm_ZipFind.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0612-0622%ED%99%94%EB%A9%B4%EA%B5%AC%ED%98%84/0612FRI_memberRegistForm_ZipFind.md)
    * 1> 회원가입 페이지 구현 2> Model 2 version 1 방식을 사용해서 구현 3> 아이디 중복 체크 구현 4> 비밀번호 불일치 구현 5> 우편번호 검색 구현 
-   
+
+2. 0613 SAT : [day0613SAT_MemberRegistProject.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0612-0622%ED%99%94%EB%A9%B4%EA%B5%AC%ED%98%84/day0613SAT_MemberRegistProject.md)
+   * 회원가입처리 
+
+3. 0613 SAT : [day0613SAT_project.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0612-0622%ED%99%94%EB%A9%B4%EA%B5%AC%ED%98%84/day0613SAT_project.md)
+   * project : board write
+
+4. 0615 MON : [day0615MON_board_WriteForm_WritePro_Content_List_Update.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0612-0622%ED%99%94%EB%A9%B4%EA%B5%AC%ED%98%84/day0615MON_board_WriteForm_WritePro_Content_List_Update.md)
+   * 1> board Write 2> board List 3> board Content 4> board Update 5> error 2가지 
 
 
