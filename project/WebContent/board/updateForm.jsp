@@ -1,5 +1,5 @@
 <%@ page contentType = "text/html;charset=UTF-8" %>
-<%@ page import = "dao.BoardDAO" %>
+<%@ page import = "dao.DogDAO" %>
 <%@ page import = "vo.BoardVO" %>
 <%@ include file="/view/color.jsp"%>
 <html>
@@ -54,7 +54,7 @@ onsubmit="return writeSave()">
      <input type="submit" value="글수정" >  
      <input type="reset" value="다시작성">
      <input type="button" value="목록보기" 
-       onclick="document.location.href='boardlist.bo?pageNum=<%=pageNum%>'">
+       onclick="document.location.href='boardList.bo?pageNum=<%=pageNum%>'">
    </td>
  </tr>
  </table>

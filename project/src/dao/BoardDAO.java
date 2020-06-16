@@ -155,7 +155,6 @@ import java.util.*;
         List articleList=null;
         PreparedStatement pstmt = null;
         try {
-            con = getConnection();
             
             pstmt = con.prepareStatement(
 			"select list2.* from(select rownum r, list1.*  " +
@@ -180,18 +179,18 @@ import java.util.*;
                 articleList = new ArrayList(end);
                 do{
                   BoardVO article= new BoardVO();
-      article.setNum(rs.getInt("num"));
-      article.setWriter(rs.getString("writer"));
+                  article.setNum(rs.getInt("num"));
+                  article.setWriter(rs.getString("writer"));
                   article.setEmail(rs.getString("email"));
                   article.setSubject(rs.getString("subject"));
                   article.setPasswd(rs.getString("passwd"));
-         article.setReg_date(rs.getTimestamp("reg_date"));
-      article.setReadcount(rs.getInt("readcount"));
+                  article.setReg_date(rs.getTimestamp("reg_date"));
+                  article.setReadcount(rs.getInt("readcount"));
                   article.setRef(rs.getInt("ref"));
                   article.setRe_step(rs.getInt("re_step"));
-      article.setRe_level(rs.getInt("re_level"));
+                  article.setRe_level(rs.getInt("re_level"));
                   article.setContent(rs.getString("content"));
-         article.setIp(rs.getString("ip")); 
+                  article.setIp(rs.getString("ip")); 
       
                   articleList.add(article);
                   i++;
@@ -253,8 +252,6 @@ import java.util.*;
         ResultSet rs = null;
         BoardVO article=null;
         try {
-            con = getConnection();
-
             pstmt = con.prepareStatement(
             	"select * from board where num = ?");
             pstmt.setInt(1, num);
@@ -286,17 +283,15 @@ import java.util.*;
 
     public int updateArticle(BoardVO article)
     throws Exception {
-        Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs= null;
 
         String dbpasswd="";
         String sql="";
-		int x=-1;
+		int updateCount=-1;
+		
         try {
-            conn = getConnection();
-            
-			pstmt = conn.prepareStatement(
+			pstmt = con.prepareStatement(
             	"select passwd from board where num = ?");
             pstmt.setInt(1, article.getNum());
             rs = pstmt.executeQuery();
@@ -306,7 +301,7 @@ import java.util.*;
 			  if(dbpasswd.equals(article.getPasswd())){
                 sql="update board set writer=?,email=?,subject=?,passwd=?";
 			    sql+=",content=? where num=?";
-                pstmt = conn.prepareStatement(sql);
+                pstmt = con.prepareStatement(sql);
 
                 pstmt.setString(1, article.getWriter());
                 pstmt.setString(2, article.getEmail());
@@ -315,32 +310,28 @@ import java.util.*;
                 pstmt.setString(5, article.getContent());
 			    pstmt.setInt(6, article.getNum());
                 pstmt.executeUpdate();
-				x= 1;
+                updateCount= 1;
 			  }else{
-				x= 0;
+				updateCount= 0;
 			  }
 			}
         } catch(Exception ex) {
             ex.printStackTrace();
         } finally {
-			if (rs != null) try { rs.close(); } catch(SQLException ex) {}
-            if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
-            if (conn != null) try { conn.close(); } catch(SQLException ex) {}
+			close(rs);
+			close(pstmt);
         }
-		return x;
+		return updateCount;
     }
     
     public int deleteArticle(int num, String passwd)
     throws Exception {
-        Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs= null;
         String dbpasswd="";
-        int x=-1;
+        int deleteCount=-1;
         try {
-			conn = getConnection();
-
-            pstmt = conn.prepareStatement(
+            pstmt = con.prepareStatement(
             	"select passwd from board where num = ?");
             pstmt.setInt(1, num);
             rs = pstmt.executeQuery();
@@ -348,21 +339,19 @@ import java.util.*;
 			if(rs.next()){
 				dbpasswd= rs.getString("passwd"); 
 				if(dbpasswd.equals(passwd)){
-					pstmt = conn.prepareStatement(
+					pstmt = con.prepareStatement(
             	      "delete from board where num=?");
                     pstmt.setInt(1, num);
-                    pstmt.executeUpdate();
-					x= 1; //�ۻ��� ����
-				}else
-					x= 0; //��й�ȣ Ʋ��
+                    deleteCount = pstmt.executeUpdate();
+				}
 			}
-        } catch(Exception ex) {
+		} catch(Exception ex) {
             ex.printStackTrace();
         } finally {
-            if (rs != null) try { rs.close(); } catch(SQLException ex) {}
-            if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
-            if (conn != null) try { conn.close(); } catch(SQLException ex) {}
+            close(rs);
+            close(pstmt);
         }
-		return x;
+		return deleteCount;
     }
  }
+ 

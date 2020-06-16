@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ page import = "dao.BoardDAO" %>
+<%@ page import = "dao.DogDAO" %>
 <%@ page import = "java.sql.Timestamp" %>
 
 <%
@@ -12,10 +12,10 @@
  
 <%
  	article.setReg_date(new Timestamp(System.currentTimeMillis()) );
- 	article.setIp(request.getRemoteAddr());
+  	article.setIp(request.getRemoteAddr());
 
-     BoardDAO dbPro = BoardDAO.getInstance();
-     dbPro.insertArticle(article);
+      DogDAO dbPro = DogDAO.getInstance();
+      dbPro.insertArticle(article);
 
-     response.sendRedirect("list.jsp");
+      response.sendRedirect("list.jsp");
  %>

@@ -144,5 +144,12 @@
 
 4. 0615 MON : [day0615MON_board_WriteForm_WritePro_Content_List_Update.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0612-0622%ED%99%94%EB%A9%B4%EA%B5%AC%ED%98%84/day0615MON_board_WriteForm_WritePro_Content_List_Update.md)
    * 1> board Write 2> board List 3> board Content 4> board Update 5> error 2가지 
+5. 0616 TUE : [day0616TUE_Board_Update_Delete.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0612-0622%ED%99%94%EB%A9%B4%EA%B5%AC%ED%98%84/day0616TUE_Board_Update_Delete.md)
+   * 1> board update pro 2> board delete form 3> board delete pro
+   * error 1 => request.setAttribute("pageNum", pageNum)을 명확하게 넘겨주지 않았다. 
+   * error 2 => BoardModifyService 단에서 boolean형을 if updateCount > 0일때 즉, DB에서 작업이 정상적으로 이루어지면 1을 반환하는데, 반환받고 boolean형을 true 주는것을 해주지 않았다.
+
+6. 0616 TUE : [day0616TUE_dog_shopping.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0612-0622%ED%99%94%EB%A9%B4%EA%B5%AC%ED%98%84/day0616TUE_dog_shopping.md)
+   * 1> Dog List SELECT : 흐름 ==> shoppingStart.jsp(dogList.dog 요청) => FC 에서 요청 받고 => Action => Service => DB => 그리고 다시 => DB => Service => Action => FC => dogList.jsp에 해당 DB에 있는 내용들을 출력한다. 
 
 

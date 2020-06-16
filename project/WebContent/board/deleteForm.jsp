@@ -1,10 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ include file="/view/color.jsp"%>
 
-<%
-  int num = Integer.parseInt(request.getParameter("num"));
-  String pageNum = request.getParameter("pageNum");
-
+<% 
+    int num = (int)request.getAttribute("num");
+    String pageNum = (String)request.getAttribute("pageNum");
 %>
 <html>
 <head>
@@ -27,7 +26,7 @@
 <body bgcolor="<%=bodyback_c%>">
 <center><b>글삭제</b>
 <br>
-<form method="POST" name="delForm"  action="deletePro.jsp?pageNum=<%=pageNum%>" 
+<form method="POST" name="delForm"  action="boardRemovePro.bo?pageNum=<%=pageNum%>" 
    onsubmit="return deleteSave()"> 
   
  <table border="1" align="center" cellspacing="0" cellpadding="0" width="360">
@@ -44,7 +43,7 @@
     <td align=center bgcolor="<%=value_c%>">
       <input type="submit" value="글삭제" >
       <input type="button" value="글목록" 
-       onclick="document.location.href='list.jsp?pageNum=<%=pageNum%>'">     
+       onclick="document.location.href='boardList.jsp?pageNum=<%=pageNum%>'">     
    </td>
  </tr>  
 </table> 

@@ -3,32 +3,26 @@ package action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import svc.BoardUpdateFormService;
 import vo.ActionForward;
-import vo.BoardVO;
 
-public class BoardModifyFormAction implements Action {
+public class BoardRemoveFormAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		// TODO Auto-generated method stub
 		
+		// 기존 delete.jsp 사용하던 연산
 		int num = Integer.parseInt(request.getParameter("num"));
 		String pageNum = request.getParameter("pageNum");
+		//
 		
-		BoardUpdateFormService boardUpdateFormService =
-				new BoardUpdateFormService();
-		
-	
-		BoardVO article =  boardUpdateFormService.getUpdateArticle(num);
-		// 데이터를 받으면 공유를 잘해줘야한다.
-		request.setAttribute("article", article);
+		request.setAttribute("num", num);
 		request.setAttribute("pageNum", pageNum);
-
+		
 		ActionForward forward = new ActionForward();
-		forward.setUrl("board/updateForm.jsp");
+		forward.setUrl("board/deleteForm.jsp");
 		
 		return forward;
+		
 	}
 
 }

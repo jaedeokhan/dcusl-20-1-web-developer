@@ -34,7 +34,6 @@
        url="jdbc:oracle:thin:@localhost:1521:XE"
        closeMethod="close"/>
        
-              
     <Resource name="jdbc/mysql" auth="Container" type="javax.sql.DataSource"
        username="root"
        password="root"

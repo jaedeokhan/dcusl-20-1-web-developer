@@ -1,5 +1,5 @@
 <%@ page contentType = "text/html;charset=UTF-8" %>
-<%@ page import = "dao.BoardDAO" %>
+<%@ page import = "dao.DogDAO" %>
 <%@ page import = "vo.BoardVO" %>
 <%@ page import = "java.text.SimpleDateFormat" %>
 <%@ include file="/view/color.jsp"%>
@@ -60,7 +60,7 @@
        onclick="document.location.href='boardUpdateForm.bo?num=<%=article.getNum()%>&pageNum=<%=pageNum%>'">
 	   &nbsp;&nbsp;&nbsp;&nbsp;
 	  <input type="button" value="글삭제" 
-       onclick="document.location.href='boardDeleteForm.bo?num=<%=article.getNum()%>&pageNum=<%=pageNum%>'">
+       onclick="document.location.href='boardRemoveForm.bo?num=<%=article.getNum()%>&pageNum=<%=pageNum%>'">
 	   &nbsp;&nbsp;&nbsp;&nbsp;
       <input type="button" value="답글쓰기" 
        onclick="document.location.href='boardWriteForm.bo?num=<%=article.getNum()%>&ref=<%=ref%>&re_step=<%=re_step%>&re_level=<%=re_level%>'">

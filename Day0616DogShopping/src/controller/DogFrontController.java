@@ -10,21 +10,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
-import action.BoardContentAction;
-import action.BoardListAction;
-import action.BoardRemoveFormAction;
-import action.BoardRemoveProAction;
-import action.BoardModifyFormAction;
-import action.BoardModifyProAction;
-import action.BoardWriteFormAction;
-import action.BoardWriteProAction;
+import action.DogListAction;
 import vo.ActionForward;
 
-@WebServlet("*.bo")
-public class BoardFrontController extends HttpServlet {
+
+@WebServlet("*.dog")
+public class DogFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public BoardFrontController() {
+    public DogFrontController() {
         super();
     }
 
@@ -49,73 +43,15 @@ public class BoardFrontController extends HttpServlet {
 		// Action 인터페이스로 두면 많은 변수를 받을 수 있다.
 		Action action = null;
 		ActionForward forward = null;
-		if (command.contentEquals("/boardWriteForm.bo")) {
+		if (command.contentEquals("/dogList.dog")) {
 			// 모든 요소를 처리할 수 있게끔 다형성을 이용한다. 
-			action = new BoardWriteFormAction();
+			action = new DogListAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			
-		}
-		else if(command.contentEquals("/boardWritePro.bo")) {
-			action = new BoardWriteProAction();
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			
-		}
-		else if(command.contentEquals("/boardList.bo")) {
-			action = new BoardListAction();
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		else if(command.contentEquals("/boardContent.bo")) {
-			action = new BoardContentAction();
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		else if(command.contentEquals("/boardUpdateForm.bo")) {
-			action = new BoardModifyFormAction();
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		else if(command.contentEquals("/boardUpdatePro.bo")) {
-			action = new BoardModifyProAction();
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		else if(command.contentEquals("/boardRemoveForm.bo")) {
-			action = new BoardRemoveFormAction();
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		else if(command.contentEquals("/boardRemovePro.bo")) {
-			action = new BoardRemoveProAction();
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}	
+
 		// 요청 처리를 했으면 3. 포워딩을 해야한다.
 		if (forward != null) {
 			// 각  Action 클래스의 execute 메소드가 정상적으로 실행되서 비지니스 로직 실행이 성공했을 떼
@@ -132,6 +68,7 @@ public class BoardFrontController extends HttpServlet {
 		else {
 				
 			}
+		}
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
