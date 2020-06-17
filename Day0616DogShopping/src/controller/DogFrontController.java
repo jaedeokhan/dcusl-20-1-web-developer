@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
+import action.DogCartAddwAction;
 import action.DogListAction;
+import action.DogViewAction;
 import vo.ActionForward;
 
 
@@ -23,7 +25,8 @@ public class DogFrontController extends HttpServlet {
     }
 
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
 		
 		// 이전에 서블릿의 처리는 유형은 정해져있었다.
 		// 1. 요청파악
@@ -51,7 +54,25 @@ public class DogFrontController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-
+		}
+		else if (command.contentEquals("/dogView.dog")) {
+				// 모든 요소를 처리할 수 있게끔 다형성을 이용한다. 
+				action = new DogViewAction();
+				try {
+					forward = action.execute(request, response);
+				} catch (Exception e) {
+					e.printStackTrace();
+			}
+		}
+		else if (command.contentEquals("/dogCartAdd.dog")) {
+			// 모든 요소를 처리할 수 있게끔 다형성을 이용한다. 
+			action = new DogCartAddwAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 		// 요청 처리를 했으면 3. 포워딩을 해야한다.
 		if (forward != null) {
 			// 각  Action 클래스의 execute 메소드가 정상적으로 실행되서 비지니스 로직 실행이 성공했을 떼
@@ -68,8 +89,8 @@ public class DogFrontController extends HttpServlet {
 		else {
 				
 			}
-		}
 	}
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		doGet(request, response);
