@@ -152,4 +152,5 @@
 6. 0616 TUE : [day0616TUE_dog_shopping.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0612-0622%ED%99%94%EB%A9%B4%EA%B5%AC%ED%98%84/day0616TUE_dog_shopping.md)
    * 1> Dog List SELECT : 흐름 ==> shoppingStart.jsp(dogList.dog 요청) => FC 에서 요청 받고 => Action => Service => DB => 그리고 다시 => DB => Service => Action => FC => dogList.jsp에 해당 DB에 있는 내용들을 출력한다. 
 
-
+7. 0617 WED : [day0617WED_dog_shopping_List_View_CartAdd.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0612-0622%ED%99%94%EB%A9%B4%EA%B5%AC%ED%98%84/day0617WED_dog_shopping_List_View_CartAdd.md)
+   * 1> dogList 의 목록을 출력하기 2> dogLists View 처리하기 3> dog 오늘 본 상품 처리하기, Cookie 사용 4> dog ReadCount(조회수)  처리하기, DogView 단에서 처리 5> dog CartAdd => 장바구니 추가, session 사용
