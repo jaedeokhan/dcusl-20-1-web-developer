@@ -154,3 +154,12 @@
 
 7. 0617 WED : [day0617WED_dog_shopping_List_View_CartAdd.md](https://github.com/jaedeokhan/20_1_WEB_Developer/blob/master/0612-0622%ED%99%94%EB%A9%B4%EA%B5%AC%ED%98%84/day0617WED_dog_shopping_List_View_CartAdd.md)
    * 1> dogList 의 목록을 출력하기 2> dogLists View 처리하기 3> dog 오늘 본 상품 처리하기, Cookie 사용 4> dog ReadCount(조회수)  처리하기, DogView 단에서 처리 5> dog CartAdd => 장바구니 추가, session 사용
+
+8. 0618 THU : [day0618THU_shopping_dog_CartAdd_CheckAll_CartRemove_QtyUp_QtyDown.md](https://github.com/jaedeokhan/dcusl-20-1-web-developer/blob/master/0612-0622%ED%99%94%EB%A9%B4%EA%B5%AC%ED%98%84/day0618THU_shopping_dog_CartAdd_CheckAll_CartRemove_QtyUp_QtyDown.md)
+   * 1> dogCartAdd => session을 사용해서 구현하기
+   * 2> js function checkAll => 모두 선택/해제 구현
+   * 3> dogCartRemove => session을 불러와서 remove 구현
+   * 4> dogCartQtyUp 구현하기
+   * 5> dogCartQtyDown 구현하기
+
+
