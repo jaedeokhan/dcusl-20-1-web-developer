@@ -11,6 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
 import action.DogCartAddwAction;
+import action.DogCartListAction;
+import action.DogCartQtyDownAction;
+import action.DogCartQtyUpAction;
+import action.DogCartRemoveAction;
 import action.DogListAction;
 import action.DogViewAction;
 import vo.ActionForward;
@@ -67,6 +71,42 @@ public class DogFrontController extends HttpServlet {
 		else if (command.contentEquals("/dogCartAdd.dog")) {
 			// 모든 요소를 처리할 수 있게끔 다형성을 이용한다. 
 			action = new DogCartAddwAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if (command.contentEquals("/dogCartList.dog")) {
+			// 모든 요소를 처리할 수 있게끔 다형성을 이용한다. 
+			action = new DogCartListAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if (command.contentEquals("/dogCartRemove.dog")) {
+			// 모든 요소를 처리할 수 있게끔 다형성을 이용한다. 
+			action = new DogCartRemoveAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if (command.contentEquals("/dogCartQtyUp.dog")) {
+			// 모든 요소를 처리할 수 있게끔 다형성을 이용한다. 
+			action = new DogCartQtyUpAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if (command.contentEquals("/dogCartQtyDown.dog")) {
+			// 모든 요소를 처리할 수 있게끔 다형성을 이용한다. 
+			action = new DogCartQtyDownAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

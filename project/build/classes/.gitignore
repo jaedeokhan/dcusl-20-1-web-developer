@@ -1,9 +1,6 @@
-/ch12/
-/controller/
 /action/
-/vo/
+/controller/
 /dao/
-/svc/
-/JdbcUtil.class
 /db/
-/service/
+/svc/
+/vo/

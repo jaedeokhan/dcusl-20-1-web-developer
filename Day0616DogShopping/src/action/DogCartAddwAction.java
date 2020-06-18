@@ -16,12 +16,10 @@ public class DogCartAddwAction implements Action {
 		String id = request.getParameter("id");
 		// 장바구니 담기 요청을 하기 위해서는 다른 정보들도 필요하다.
 		// 기존에 사용한 Service로 dogVO를 받아온다.
-		DogViewService dogViewService = 
-				new DogViewService();
+		DogViewService dogViewService = new DogViewService();
 		DogVO dogVO = dogViewService.getDogVO(id);
 		
-		DogCartAddService dogCartAddService = 
-				new DogCartAddService();
+		DogCartAddService dogCartAddService = new DogCartAddService();
 		
 		// 장바구니에 담으면 장바구니에 담은 목록들이 보인다.
 		dogCartAddService.addCart(request, dogVO);
