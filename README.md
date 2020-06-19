@@ -162,4 +162,10 @@
    * 4> dogCartQtyUp 구현하기
    * 5> dogCartQtyDown 구현하기
 
+9. 0619 FRI : [day0619FRI_shopping_dog_QtyDown_Regist_upload_Part.md](https://github.com/jaedeokhan/dcusl-20-1-web-developer/blob/master/0612-0622%ED%99%94%EB%A9%B4%EA%B5%AC%ED%98%84/day0619FRI_shopping_dog_QtyDown_Regist_upload_Part.md)
+   * 1> dogShopping QtyDown 구현 => js function checkQty(), 1보다 크면 감소시키기
+   * 2> Java Deploy 실제적인 경로 => .metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps 
+   * 3> dogRegist => image upload 도 구현
+   * 4> Part API 를 통해서 image upload 구현
+   * 5> project => EL 태그로 변경
 
