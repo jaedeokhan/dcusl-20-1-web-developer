@@ -31,6 +31,13 @@
 		  }
 	   }
    };
+   
+   function checkQty(id, qty){
+	   if (qty > 1 ){
+		  location.href = "dogCartQtyDown2.dog?id=" + id;   
+	   }
+   }
+   
 </script>
 <style>
    #cartListArea{
@@ -106,6 +113,9 @@
 			          <img src="image/up.jpg" class="upDownImage">
 			       </a><br>
 			          <%= cartList.get(i).getQty() %><br>
+			       <a href="javascript:checkQty('<%= cartList.get(i).getId() %>',<%=cartList.get(i).getQty()%>)">
+				      <img src="image/down.jpg" class="upDownImage">0619
+			       </a>   
 			       <a href="dogCartQtyDown.dog?id=<%= cartList.get(i).getId() %>">
 				      <img src="image/down.jpg" class="upDownImage">
 			       </a>

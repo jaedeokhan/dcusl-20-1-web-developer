@@ -12,10 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 import action.Action;
 import action.DogCartAddwAction;
 import action.DogCartListAction;
+import action.DogCartQtyDown2Action;
 import action.DogCartQtyDownAction;
 import action.DogCartQtyUpAction;
 import action.DogCartRemoveAction;
 import action.DogListAction;
+import action.DogRegistAction;
 import action.DogViewAction;
 import vo.ActionForward;
 
@@ -113,6 +115,25 @@ public class DogFrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
+		else if (command.contentEquals("/dogCartQtyDown2.dog")) {
+			// 모든 요소를 처리할 수 있게끔 다형성을 이용한다. 
+			action = new DogCartQtyDown2Action();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if (command.contentEquals("/dogRegist.dog")) {
+			// 모든 요소를 처리할 수 있게끔 다형성을 이용한다. 
+			action = new DogRegistAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
 		// 요청 처리를 했으면 3. 포워딩을 해야한다.
 		if (forward != null) {
 			// 각  Action 클래스의 execute 메소드가 정상적으로 실행되서 비지니스 로직 실행이 성공했을 떼

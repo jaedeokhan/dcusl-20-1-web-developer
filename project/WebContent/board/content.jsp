@@ -1,5 +1,5 @@
 <%@ page contentType = "text/html;charset=UTF-8" %>
-<%@ page import = "dao.DogDAO" %>
+<%@ page import = "dao.BoardDAO" %>
 <%@ page import = "vo.BoardVO" %>
 <%@ page import = "java.text.SimpleDateFormat" %>
 <%@ include file="/view/color.jsp"%>

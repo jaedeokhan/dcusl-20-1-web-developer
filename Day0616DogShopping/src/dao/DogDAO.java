@@ -112,6 +112,37 @@ import static db.JdbcUtil.*;
 		}
 		return updateCount;
 	}
+
+	public int insertDog(DogVO dogVO) {
+		
+		int insertCount = 0;
+		PreparedStatement pstmt = null;
+		String sql = "INSERT INTO dog(id, kind, price, image,"
+				  + " country, height, weight, content, readcount)"
+		     	  + " VALUES(dog_seq.nextval,?, ?, ?, ?, ?, ?, ?, ?)";
+		
+		try {
+		    pstmt = con.prepareStatement(sql);
+		    pstmt.setString(1, dogVO.getKind());
+		    pstmt.setInt(2, dogVO.getPrice());
+		    pstmt.setString(3, dogVO.getImage());
+		    pstmt.setString(4, dogVO.getCountry());
+		    pstmt.setInt(5, dogVO.getHeight());
+		    pstmt.setInt(6, dogVO.getWeight());
+		    pstmt.setString(7, dogVO.getContent());
+		    pstmt.setInt(8, 0);
+		    
+		    
+			insertCount = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return insertCount;
+	}
   
  }
  

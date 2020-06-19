@@ -1,29 +1,30 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ include file="/view/color.jsp"%>
 <%@ page import="vo.ReplyVO" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
 <title>게시판</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" src="script.js"></script>
 </head>
-
-<%
+<% 
+/*
    ReplyVO replyVO = (ReplyVO)request.getAttribute("replyVO");
    int num = replyVO.getNum();
    int ref = replyVO.getRef();
    int re_step = replyVO.getRe_step();
    int re_level = replyVO.getRe_level();
+*/
 %>
-   
 <body bgcolor="<%=bodyback_c%>">  
-<center><b>글쓰기</b>
+<b>글쓰기</b>
 <br>
 <form method="post" name="writeform" action="boardWritePro.bo" onsubmit="return writeSave()">
-<input type="hidden" name="num" value="<%=num%>">
-<input type="hidden" name="ref" value="<%=ref%>">
-<input type="hidden" name="re_step" value="<%=re_step%>">
-<input type="hidden" name="re_level" value="<%=re_level%>">
+<input type="hidden" name="num" value="${replyVO.num}">
+<input type="hidden" name="ref" value="${replyVO.ref}">
+<input type="hidden" name="re_step" value="${replyVO.re_step}">
+<input type="hidden" name="re_level" value="${replyVO.re_level}">
 
 <table width="400" border="1" cellspacing="0" cellpadding="0"
   bgcolor="<%=bodyback_c%>" align="center">
@@ -40,12 +41,13 @@
   <tr>
     <td  width="70"  bgcolor="<%=value_c%>" align="center" >제 목</td>
     <td  width="330">
-    <%if(request.getParameter("num")==null){%>
+    <c:if test="${replyVO.num == 0}">
        <input type="text" size="40" maxlength="50" name="subject"></td>
-	<%}else{%>
+	</c:if>
+	<c:if test="${replyVO.num != 0}"">
 	   <input type="text" size="40" maxlength="50" name="subject" 
 	   value="[답변]"></td>
-	<%}%>
+	</c:if>
   </tr>
   <tr>
     <td  width="70"  bgcolor="<%=value_c%>" align="center">Email</td>
